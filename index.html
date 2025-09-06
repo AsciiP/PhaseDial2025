@@ -23,12 +23,8 @@
         rel="stylesheet">
 
     <style>
-        html,
         body {
             overflow-x: hidden !important;
-        }
-
-        body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background: #000000;
             margin: 0;
@@ -39,8 +35,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -53,7 +49,6 @@
             max-width: 700px;
             margin: 40px auto;
             padding: 20px 0;
-            overflow-x: auto;
         }
 
         .timeline::before {
@@ -122,19 +117,33 @@
             .timeline {
                 left: 16px;
                 padding: 6px 0;
-                max-width: 100vw;
+                max-width: 90vw;
             }
 
             .timeline-event {
                 padding: 12px 0 12px 18px;
                 min-width: 0;
             }
+
+            .warplink {
+                display: block !important;
+            }
         }
 
-        .media {
+        .picture {
             width: 100% !important;
             max-width: 100vw !important;
             height: auto !important;
+        }
+
+        .warplink {
+            display: none;
+            font-family: "Noto Serif SC", serif;
+            text-align: center;
+            font-size: 1rem;
+            color: #595959;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         .title-logo {
@@ -262,13 +271,14 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115123242992070&bvid=BV1jda3z4EAa&cid=32073648337&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1jda3z4EAa" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@←</div>
             </div>
 
             <div class="time-minor">01:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/8Lotl9HWQG4" target="_blank">
-                    <img class="media" src="assets/0106.jpg" alt="01:06">
+                    <img class="picture" src="assets/0106.jpg" alt="01:06">
                 </a>
                 <div class="author">@水绵</div>
             </div>
@@ -276,7 +286,7 @@
             <div class="time-minor">02:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/9Ea6NuDZOJf" target="_blank">
-                    <img class="media" src="assets/0206.jpg" alt="02:06">
+                    <img class="picture" src="assets/0206.jpg" alt="02:06">
                 </a>
                 <div class="author">@时间奇点</div>
             </div>
@@ -284,7 +294,7 @@
             <div class="time-minor">03:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/4cbTJwB8XIT" target="_blank">
-                    <img class="media" src="assets/0306.jpg" alt="03:06">
+                    <img class="picture" src="assets/0306.jpg" alt="03:06">
                 </a>
                 <div class="author">@冽清</div>
             </div>
@@ -292,7 +302,7 @@
             <div class="time-minor">04:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/8Cmj8F9eL9P" target="_blank">
-                    <img class="media" src="assets/0406.jpg" alt="04:06">
+                    <img class="picture" src="assets/0406.jpg" alt="04:06">
                 </a>
                 <div class="author">@打火机</div>
             </div>
@@ -300,7 +310,7 @@
             <div class="time-minor">05:06</div>
             <div class="content">
                 <a href="https://jiej2.lofter.com/post/85ce40fa_2bf834d0c" target="_blank">
-                    <img class="media" src="assets/0506.jpg" alt="05:06">
+                    <img class="picture" src="assets/0506.jpg" alt="05:06">
                 </a>
                 <div class="author">@芥集</div>
             </div>
@@ -308,9 +318,9 @@
             <div class="time-minor">06:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/v35gTYbLPU" target="_blank">
-                    <img class="media" src="assets/06061.jpg" alt="06:06-1">
-                    <img class="media" src="assets/06062.jpg" alt="06:06-2">
-                    <img class="media" src="assets/06063.jpg" alt="06:06-3">
+                    <img class="picture" src="assets/06061.jpg" alt="06:06-1">
+                    <img class="picture" src="assets/06062.jpg" alt="06:06-2">
+                    <img class="picture" src="assets/06063.jpg" alt="06:06-3">
                 </a>
                 <div class="author">@水云</div>
             </div>
@@ -321,13 +331,14 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115152955382575&bvid=BV1JmaazpEHp&cid=32185779199&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1JmaazpEHp" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@锡瓜/壹號缐乐队</div>
             </div>
 
             <div class="time-minor">08:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/6dWMwSIwRAi" target="_blank">
-                    <img class="media" src="assets/0806.jpg" alt="08:06">
+                    <img class="picture" src="assets/0806.jpg" alt="08:06">
                 </a>
                 <div class="author">@糖鱼</div>
             </div>
@@ -339,7 +350,7 @@
             <div class="time-major">09:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/80KXg90S6wr" target="_blank">
-                    <img class="media" src="assets/0906.jpg" alt="09:06">
+                    <img class="picture" src="assets/0906.jpg" alt="09:06">
                 </a>
                 <div class="author">@鏡</div>
             </div>
@@ -350,16 +361,17 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115116397829715&bvid=BV1jMhvzXE41&cid=32040288365&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1jMhvzXE41" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@南绮</div>
             </div>
 
             <div class="time-extra">10:23</div>
             <div class="content-extra">
                 <a href="http://xhslink.com/m/720Eu0Dxqlk" target="_blank">
-                    <img class="media" src="assets/10231.jpg" alt="10:23-1">
+                    <img class="picture" src="assets/10231.jpg" alt="10:23-1">
                 </a>
                 <a href="http://xhslink.com/m/5MjzJUGYihm" target="_blank">
-                    <img class="media" src="assets/10232.jpg" alt="10:23-2">
+                    <img class="picture" src="assets/10232.jpg" alt="10:23-2">
                 </a>
                 <div class="author">@八筱</div>
             </div>
@@ -367,7 +379,7 @@
             <div class="time-major">11:06</div>
             <div class="content">
                 <a href="https://xinjinjumin850447649965.lofter.com/post/7b04a9c7_2bf8b0644" target="_blank">
-                    <img class="media" src="assets/1106.jpg" alt="11:06">
+                    <img class="picture" src="assets/1106.jpg" alt="11:06">
                 </a>
                 <div class="author">@霞</div>
             </div>
@@ -375,7 +387,7 @@
             <div class="time-extra">11:45</div>
             <div class="content-extra">
                 <a href="https://www.bilibili.com/opus/1109355265518469125" target="_blank">
-                    <img class="media" src="assets/1145.jpg" alt="11:45">
+                    <img class="picture" src="assets/1145.jpg" alt="11:45">
                 </a>
                 <div class="author">@泡bubble</div>
             </div>
@@ -386,6 +398,7 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115155371298345&bvid=BV1RzavzsEJj&cid=32194824351&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1RzavzsEJj" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@AsciiP</div>
             </div>
 
@@ -394,10 +407,10 @@
                 <div class="comment">（可左右滑动）</div>
                 <a href="http://xhslink.com/m/4zHhXaJCAc6" target="_blank">
                     <div style="overflow-x: auto; white-space: nowrap;">
-                        <img class="media" src="assets/13061.jpg" alt="13:06-1" style="display: inline-block;">
-                        <img class="media" src="assets/13062.jpg" alt="13:06-2" style="display: inline-block;">
-                        <img class="media" src="assets/13063.jpg" alt="13:06-3" style="display: inline-block;">
-                        <img class="media" src="assets/13064.jpg" alt="13:06-4" style="display: inline-block;">
+                        <img class="picture" src="assets/13061.jpg" alt="13:06-1" style="display: inline-block;">
+                        <img class="picture" src="assets/13062.jpg" alt="13:06-2" style="display: inline-block;">
+                        <img class="picture" src="assets/13063.jpg" alt="13:06-3" style="display: inline-block;">
+                        <img class="picture" src="assets/13064.jpg" alt="13:06-4" style="display: inline-block;">
                     </div>
                 </a>
                 <div class="author">@樽酹</div>
@@ -409,6 +422,7 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115071384552823&bvid=BV18Xe4zhEFZ&cid=31867668129&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV18Xe4zhEFZ" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@_LINKER-</div>
             </div>
 
@@ -417,8 +431,8 @@
                 <div class="comment">（可左右滑动）</div>
                 <a href="https://zhaochuo04494.lofter.com/post/31bfd308_2bf800e27" target="_blank">
                     <div style="overflow-x: auto; white-space: nowrap;">
-                        <img class="media" src="assets/15061.jpg" alt="15:06-1" style="display: inline-block;">
-                        <img class="media" src="assets/15062.jpg" alt="15:06-2" style="display: inline-block;">
+                        <img class="picture" src="assets/15061.jpg" alt="15:06-1" style="display: inline-block;">
+                        <img class="picture" src="assets/15062.jpg" alt="15:06-2" style="display: inline-block;">
                     </div>
                 </a>
                 <div class="author">@ca</div>
@@ -430,13 +444,14 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115116230057746&bvid=BV1K8hvzBE8T&cid=32045336623&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1K8hvzBE8T" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@Kanz-</div>
             </div>
 
             <div class="time-major">17:06</div>
             <div class="content">
                 <a href="https://x.com/Rain_paperbox/status/1964253740271124816" target="_blank">
-                    <img class="media" src="assets/1706.jpg" alt="17:06">
+                    <img class="picture" src="assets/1706.jpg" alt="17:06">
                 </a>
                 <div class="author">@Rain</div>
             </div>
@@ -448,6 +463,7 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115156780654484&bvid=BV1tVYTzYEND&cid=32202099318&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1tVYTzYEND" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@清苔</div>
             </div>
 
@@ -455,8 +471,8 @@
             <div class="content">
                 <div class="status">
                     <div style="display: flex; align-items: center; justify-content: center;">
-                        <img src="assets/happy.gif" alt="Oops" style="width: 64px; height: auto; margin-right: 16px;">
-                        <span style="color: #fff; font-size: 1.1rem;">这里是月亮的背面</span>
+                        <img src="assets/happy.gif" alt="Oops" style="width: 64px; height: auto">
+                        <span style="color: #fff; font-size: 1rem;">这里是月亮的背面</span>
                     </div>
                 </div>
             </div>
@@ -467,13 +483,14 @@
                     src="//player.bilibili.com/player.html?isOutside=true&aid=115103865245707&bvid=BV1qpeDzuE49&cid=31988712808&p=1"
                     scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <a class="warplink" href="https://www.bilibili.com/video/BV1qpeDzuE49" target="_blank">跳转到视频详情页面</a>
                 <div class="author">@叉烧</div>
             </div>
 
             <div class="time-major">21:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/10shI9FbSWd" target="_blank">
-                    <img class="media" src="assets/2106.jpg" alt="21:06">
+                    <img class="picture" src="assets/2106.jpg" alt="21:06">
                 </a>
                 <div class="author">@茨荻</div>
             </div>
