@@ -180,6 +180,17 @@
             margin-bottom: 10px;
         }
 
+        .status {
+            font-family: "Noto Serif SC", serif;
+            text-align: center;
+            font-size: 1rem;
+            color: #fff;
+            margin: 30px;
+            background: #747474;
+            padding: 8px 0;
+            font-weight: bold;
+        }
+
         .media {
             max-width: 100%;
             height: auto;
@@ -207,7 +218,7 @@
         ];
 
         // 每张图片的显示高度（单位 vh）
-        const sectionHeight = 200;
+        const sectionHeight = 250;
 
         // 动态创建背景层
         const bgs = [];
@@ -247,7 +258,7 @@
     <div class="divider"></div>
     <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 24px;">
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=400
-            src="//music.163.com/outchain/player?type=0&id=14251381297&auto=0&height=430"></iframe>
+            src="https://music.163.com/outchain/player?type=0&id=14251381297&auto=0&height=430"></iframe>
     </div>
     <div class="timeline">
         <div class="timeline-event">
@@ -424,6 +435,49 @@
                     style="width: 640px; height: 360px; max-width: 100%;"></iframe>
                 <div class="author">@Kanz-</div>
             </div>
+
+            <div class="time-major">17:06</div>
+            <div class="content">
+                <div class="status" style="background-color: red;">UNAVAILABLE</div>
+            </div>
+
+            <!-- !! This is GOAT absolutely !!-->
+            <div class="time-major">18:06</div>
+            <div class="content">
+                <iframe
+                    src="//player.bilibili.com/player.html?isOutside=true&aid=115156780654484&bvid=BV1tVYTzYEND&cid=32202099318&p=1"
+                    scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+                    style="width: 640px; height: 360px; max-width: 100%;"></iframe>
+                <div class="author">@清苔</div>
+            </div>
+            
+            <div class="time-major">19:06</div>
+            <div class="content">
+                <div class="status">LOCKED</div>
+            </div>
+
+            <div class="time-major">20:06</div>
+            <div class="content">
+                <div class="status">LOCKED</div>
+            </div>
+
+            <div class="time-major">21:06</div>
+            <div class="content">
+                <div class="status">LOCKED</div>
+            </div>
+
+            <div class="time-minor">22:06</div>
+            <div class="content">
+                <div class="status">LOCKED</div>
+            </div>
+
+            <div class="time-minor">23:06</div>
+            <div class="content">
+                <div class="status">LOCKED</div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
