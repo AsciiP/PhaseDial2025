@@ -19,17 +19,13 @@
     <meta content="https://asciip.github.io/PhaseDial2025/assets/screenshot.jpg" property="og:image" />
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+SC:wght@200..900&family=Rock+Salt&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.font.im">
     <link
         href="https://fonts.font.im/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+SC:wght@200..900&family=Rock+Salt&display=swap"
         rel="stylesheet">
-        
+    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+SC:wght@200..900&family=Rock+Salt&display=swap"
+        rel="stylesheet">
 
     <style>
         body {
@@ -134,6 +130,10 @@
                 min-width: 0;
             }
 
+            .pconly {
+                display: none !important;
+            }
+
             .warplink {
                 display: block !important;
             }
@@ -153,6 +153,10 @@
             color: #595959;
             margin-top: 10px;
             margin-bottom: 10px;
+        }
+        
+        .pconly {
+            display: block;
         }
 
         .title-logo {
@@ -215,6 +219,7 @@
             color: #ffffff;
             text-align: center;
             margin-top: 50vh;
+            margin-bottom: 50vh;
         }
     </style>
 </head>
@@ -239,7 +244,7 @@
         ];
 
         // 每张图片的显示高度（单位 vh）
-        const sectionHeight = 240;
+        const sectionHeight = 200;
 
         // 动态创建背景层
         const bgs = [];
@@ -274,13 +279,14 @@
             if (bgs[index + 1]) bgs[index + 1].style.opacity = progress;
         });
     </script>
+
     <img class="title-logo" src="assets/pdLogo.gif" alt="月相時計 ゲッソウトケイ">
     <div class="subtitle">r-906 投稿企划</div>
     <div class="divider"></div>
     <div class="timeline">
         <div class="timeline-event">
 
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=460
+            <iframe class="pconly" frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=460
                 src="https://music.163.com/outchain/player?type=0&id=14251381297&auto=0&height=460"
                 style="margin-top: 120px;"></iframe>
 
@@ -368,7 +374,7 @@
                 <div class="author">@糖鱼</div>
             </div>
 
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=460
+            <iframe class="pconly" frameborder="no" border="0" marginwidth="0" marginheight="0" width=320 height=460
                 src="//music.163.com/outchain/player?type=0&id=14251705532&auto=0&height=460"
                 style="margin-top: 140px;"></iframe>
 
