@@ -25,11 +25,10 @@
 
     <style>
         body {
-            overflow-x: hidden !important;
+            overflow-x: hidden;
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: #000000;
+            background: #000;
             margin: 0;
-            padding: 0;
         }
 
         .bg {
@@ -41,7 +40,7 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
-            transition: opacity 1s ease-in-out;
+            transition: opacity;
         }
 
         .timeline {
@@ -59,7 +58,7 @@
             top: 0;
             width: 2px;
             height: 100%;
-            background: #ffffff;
+            background: #fff;
         }
 
         .timeline-event {
@@ -71,52 +70,41 @@
             min-width: 340px;
         }
 
-        .timeline-event .content {
+        .content,
+        .content-extra {
             background: #fff;
             padding: 15px 25px;
             display: inline-block;
             width: 80%;
         }
 
-        .timeline-event .content-extra {
-            background: #ffffff;
-            padding: 15px 25px;
-            display: inline-block;
-            width: 80%;
-        }
-
-        .timeline-event .time-major {
+        .time-major {
             font-family: 'Bodoni Moda', serif;
             font-weight: 600;
             font-size: 3.5rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 120px;
+            color: #fff;
+            margin: 120px 0 12px 0;
         }
 
-        .timeline-event .time-minor {
+        .time-minor {
             font-family: 'Bodoni Moda', serif;
             font-weight: 400;
             font-style: italic;
             font-size: 3rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 120px;
+            color: #fff;
+            margin: 120px 0 12px 0;
         }
 
-        .timeline-event .time-extra {
+        .time-extra {
             font-family: 'Rock Salt', sans-serif;
             font-weight: 300;
-            font-style: normal;
             font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-            margin-top: 120px;
+            color: #fff;
+            margin: 120px 0 12px 0;
         }
 
         @media (max-width: 600px) {
             .timeline {
-                left: 16px;
                 padding: 6px 0;
                 max-width: 90vw;
             }
@@ -136,9 +124,9 @@
         }
 
         .picture {
-            width: 100% !important;
-            max-width: 100vw !important;
-            height: auto !important;
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
         }
 
         .warplink {
@@ -147,8 +135,7 @@
             text-align: center;
             font-size: 1rem;
             color: #595959;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
         .pconly {
@@ -180,20 +167,13 @@
             mix-blend-mode: difference;
         }
 
-        .author {
-            font-family: "Noto Serif SC", serif;
-            text-align: center;
-            font-size: 1rem;
-            color: #595959;
-            margin-top: 10px;
-        }
-
+        .author,
         .comment {
             font-family: "Noto Serif SC", serif;
             text-align: center;
             font-size: 1rem;
             color: #595959;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
         .status {
@@ -212,63 +192,32 @@
             font-style: italic;
             font-weight: 600;
             font-size: 3.5rem;
-            color: #ffffff;
+            color: #fff;
             text-align: center;
-            padding-top: 50vh;
-            padding-bottom: 50vh;
+            padding: 50vh 0;
         }
     </style>
 </head>
 
 <body>
     <script>
-        // 图片数组
-        const phaseImages = [
-            "assets/phases/0906.jpg",
-            "assets/phases/1006.jpg",
-            "assets/phases/1106.jpg",
-            "assets/phases/1206.jpg",
-            "assets/phases/1306.jpg",
-            "assets/phases/1406.jpg",
-            "assets/phases/1506.jpg",
-            "assets/phases/1606.jpg",
-            "assets/phases/1706.jpg",
-            "assets/phases/1806.jpg",
-            "assets/phases/1906.jpg",
-            "assets/phases/2006.jpg",
-            "assets/phases/2106.jpg"
-        ];
-
-        // 每张图片的显示高度（单位 vh）
-        const sectionHeight = 200;
-
-        // 动态创建背景层
-        const bgs = [];
-        phaseImages.forEach(src => {
+        const phaseImages = Array.from({ length: 13 }, (_, i) => `assets/phases/${(906 + i * 100).toString().padStart(4, '0')}.jpg`);
+        const sectionHeight = 220;
+        const bgs = phaseImages.map(src => {
             const div = document.createElement("div");
             div.className = "bg";
             div.style.backgroundImage = `url(${src})`;
             document.body.appendChild(div);
-            bgs.push(div);
+            return div;
         });
-
-        // 滚动事件
         window.addEventListener("scroll", () => {
             const scrollY = window.scrollY;
             const vh = window.innerHeight;
-            const sectionPx = (vh * sectionHeight) / 100; // 每张图实际高度（像素）
-
-            // 当前区间
+            const sectionPx = vh * sectionHeight / 100;
             const index = Math.floor(scrollY / sectionPx);
-            const progress = (scrollY % sectionPx) / sectionPx; // 0 ~ 1
-
-            // 重置透明度
+            const progress = (scrollY % sectionPx) / sectionPx;
             bgs.forEach(bg => bg.style.opacity = 0);
-
-            // 当前图
             if (bgs[index]) bgs[index].style.opacity = 1 - progress;
-
-            // 下一张图
             if (bgs[index + 1]) bgs[index + 1].style.opacity = progress;
         });
     </script>
@@ -283,7 +232,7 @@
                 src="https://music.163.com/outchain/player?type=0&id=14251381297&auto=0&height=460"
                 style="margin-top: 120px;"></iframe>
 
-            <div class="time-minor">00:06</div>
+            <div id="0006" class="time-minor">00:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -296,7 +245,7 @@
                 <div class="author">@←</div>
             </div>
 
-            <div class="time-minor">01:06</div>
+            <div id="0106" class="time-minor">01:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/8Lotl9HWQG4" target="_blank">
                     <img class="picture" src="assets/0106.jpg" alt="01:06">
@@ -304,7 +253,7 @@
                 <div class="author">@水绵</div>
             </div>
 
-            <div class="time-minor">02:06</div>
+            <div id="0206" class="time-minor">02:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/9Ea6NuDZOJf" target="_blank">
                     <img class="picture" src="assets/0206.jpg" alt="02:06">
@@ -312,7 +261,7 @@
                 <div class="author">@时间奇点</div>
             </div>
 
-            <div class="time-minor">03:06</div>
+            <div id="0306" class="time-minor">03:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/4cbTJwB8XIT" target="_blank">
                     <img class="picture" src="assets/0306.jpg" alt="03:06">
@@ -320,7 +269,7 @@
                 <div class="author">@冽清</div>
             </div>
 
-            <div class="time-minor">04:06</div>
+            <div id="0406" class="time-minor">04:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/8Cmj8F9eL9P" target="_blank">
                     <img class="picture" src="assets/0406.jpg" alt="04:06">
@@ -328,7 +277,7 @@
                 <div class="author">@打火机</div>
             </div>
 
-            <div class="time-minor">05:06</div>
+            <div id="0506" class="time-minor">05:06</div>
             <div class="content">
                 <a href="https://jiej2.lofter.com/post/85ce40fa_2bf834d0c" target="_blank">
                     <img class="picture" src="assets/0506.jpg" alt="05:06">
@@ -336,7 +285,7 @@
                 <div class="author">@芥集</div>
             </div>
 
-            <div class="time-minor">06:06</div>
+            <div id="0606" class="time-minor">06:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/v35gTYbLPU" target="_blank">
                     <img class="picture" src="assets/06061.jpg" alt="06:06-1">
@@ -346,7 +295,7 @@
                 <div class="author">@水云</div>
             </div>
 
-            <div class="time-minor">07:06</div>
+            <div id="0706" class="time-minor">07:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -359,7 +308,7 @@
                 <div class="author">@锡瓜/壹號缐乐队</div>
             </div>
 
-            <div class="time-minor">08:06</div>
+            <div id="0806" class="time-minor">08:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/6dWMwSIwRAi" target="_blank">
                     <img class="picture" src="assets/0806.jpg" alt="08:06">
@@ -371,7 +320,7 @@
                 src="//music.163.com/outchain/player?type=0&id=14251705532&auto=0&height=460"
                 style="margin-top: 140px;"></iframe>
 
-            <div class="time-major">09:06</div>
+            <div id="0906" class="time-major">09:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/80KXg90S6wr" target="_blank">
                     <img class="picture" src="assets/0906.jpg" alt="09:06">
@@ -379,7 +328,7 @@
                 <div class="author">@鏡</div>
             </div>
 
-            <div class="time-major">10:06</div>
+            <div id="1006" class="time-major">10:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -391,7 +340,7 @@
                 <div class="author">@南绮</div>
             </div>
 
-            <div class="time-extra">10:23</div>
+            <div id="1023" class="time-extra">10:23</div>
             <div class="content-extra">
                 <a href="http://xhslink.com/m/720Eu0Dxqlk" target="_blank">
                     <img class="picture" src="assets/10231.jpg" alt="10:23-1">
@@ -402,7 +351,7 @@
                 <div class="author">@八筱</div>
             </div>
 
-            <div class="time-major">11:06</div>
+            <div id="1106" class="time-major">11:06</div>
             <div class="content">
                 <a href="https://xinjinjumin850447649965.lofter.com/post/7b04a9c7_2bf8b0644" target="_blank">
                     <img class="picture" src="assets/1106.jpg" alt="11:06">
@@ -410,7 +359,7 @@
                 <div class="author">@霞</div>
             </div>
 
-            <div class="time-extra">11:45</div>
+            <div id="1145" class="time-extra">11:45</div>
             <div class="content-extra">
                 <a href="https://www.bilibili.com/opus/1109355265518469125" target="_blank">
                     <img class="picture" src="assets/1145.jpg" alt="11:45">
@@ -418,7 +367,7 @@
                 <div class="author">@泡bubble</div>
             </div>
 
-            <div class="time-major">12:06</div>
+            <div id="1206" class="time-major">12:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -430,7 +379,7 @@
                 <div class="author">@AsciiP</div>
             </div>
 
-            <div class="time-major">13:06</div>
+            <div id="1306" class="time-major">13:06</div>
             <div class="content">
                 <div class="comment">（可左右滑动）</div>
                 <a href="http://xhslink.com/m/4zHhXaJCAc6" target="_blank">
@@ -444,7 +393,7 @@
                 <div class="author">@樽酹</div>
             </div>
 
-            <div class="time-major">14:06</div>
+            <div id="1406" class="time-major">14:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -457,7 +406,7 @@
                 <div class="author">@_LINKER-</div>
             </div>
 
-            <div class="time-major">15:06</div>
+            <div id="1506" class="time-major">15:06</div>
             <div class="content">
                 <div class="comment">（可左右滑动）</div>
                 <a href="https://zhaochuo04494.lofter.com/post/31bfd308_2bf800e27" target="_blank">
@@ -469,7 +418,7 @@
                 <div class="author">@ca</div>
             </div>
 
-            <div class="time-major">16:06</div>
+            <div id="1606" class="time-major">16:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -482,7 +431,7 @@
                 <div class="author">@Kanz-</div>
             </div>
 
-            <div class="time-major">17:06</div>
+            <div id="1706" class="time-major">17:06</div>
             <div class="content">
                 <a href="https://x.com/Rain_paperbox/status/1964253740271124816" target="_blank">
                     <img class="picture" src="assets/1706.jpg" alt="17:06">
@@ -491,7 +440,7 @@
             </div>
 
             <!-- !! This is GOAT absolutely !!-->
-            <div class="time-major">18:06</div>
+            <div id="1806" class="time-major">18:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -504,7 +453,7 @@
                 <div class="author">@清苔</div>
             </div>
 
-            <div class="time-major">19:06</div>
+            <div id="1906" class="time-major">19:06</div>
             <div class="content">
                 <div class="status">
                     <div style="display: flex; align-items: center; justify-content: center;">
@@ -514,7 +463,7 @@
                 </div>
             </div>
 
-            <div class="time-major">20:06</div>
+            <div id="2006" class="time-major">20:06</div>
             <div class="content">
                 <div style="position: relative; width: 100%; padding-top: 56.25%;">
                     <iframe
@@ -526,7 +475,7 @@
                 <div class="author">@叉烧</div>
             </div>
 
-            <div class="time-major">21:06</div>
+            <div id="2106" class="time-major">21:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/10shI9FbSWd" target="_blank">
                     <img class="picture" src="assets/2106.jpg" alt="21:06">
@@ -534,7 +483,7 @@
                 <div class="author">@茨荻</div>
             </div>
 
-            <div class="time-minor">22:06</div>
+            <div id="2206" class="time-minor">22:06</div>
             <div class="content">
                 <a href="http://xhslink.com/m/vh6vOG3n0s" target="_blank">
                     <img class="picture" src="assets/2206.jpg" alt="22:06">
@@ -542,7 +491,7 @@
                 <div class="author">@冷冻库 & @無色</div>
             </div>
 
-            <div class="time-minor">23:06</div>
+            <div id="2306" class="time-minor">23:06</div>
             <div class="content">
                 <div class="status">UNDEFINED</div>
             </div>
